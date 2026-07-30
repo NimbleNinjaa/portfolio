@@ -1,0 +1,36 @@
+/* Import Original CSS Files from assets - These take priority */
+@import '/assets/fonts/fonts.css';
+@import '/assets/icon/icomoon/style.css';
+@import '/assets/css/bootstrap.min.css';
+@import '/assets/css/swiper-bundle.min.css';
+@import '/assets/css/animate.css';
+@import '/assets/css/odometer.min.css';
+@import '/assets/css/slick.css';
+@import '/assets/css/slick.theme.css';
+@import '/assets/css/styles.css';
+@import '/assets/css/project-modals.css';
+
+/* Tailwind - Keep minimal to avoid conflicts */
+@tailwind components;
+@tailwind utilities;
+
+/* Additional custom styles */
+@layer utilities {
+	.animate-fadeIn {
+		animation: fadeIn 0.3s ease-in-out;
+	}
+	
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+}
+
+/* Body overflow hidden when modal is open */
+body.modal-open {
+	overflow: hidden;
+}

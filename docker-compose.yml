@@ -1,0 +1,12 @@
+services:
+  portfolio:
+    build: .
+    image: hamid-portfolio:latest
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    environment:
+      NODE_ENV: production
+      PORT: 3000
+      HOST: 0.0.0.0
+      RESEND_API_KEY: ${RESEND_API_KEY}
