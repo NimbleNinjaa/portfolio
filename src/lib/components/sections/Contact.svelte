@@ -12,20 +12,16 @@
 <!-- CTA -->
 <section class="section-cta flat-spacing" id="contactScroll">
     <div class="bg-img">
-        <img loading="lazy" width="1440" height="1081" src="/assets/images/item/bg-3.png" alt="Image">
+        <img loading="lazy" width="1440" height="1081" src="/assets/images/item/bg-3.png" alt="">
     </div>
     <div class="s-header d-block">
         <div class="container">
             <div class="row">
                 <div class="col-2 offset-lg-2 col-lg-2">
                     <div class="col-left">
-                        <a href="/" class="logo-custom">
+                        <a href="/" class="logo-custom" aria-label="Home">
                             <div class="logo-site-sv">
-                                <svg width="34" height="41" viewBox="0 0 34 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M9.21094 0.400391C15.9908 0.392629 21.8983 0.597548 27.1426 5.65918C35.1922 13.4293 35.2468 26.7035 27.5312 34.7549C22.0053 40.1145 16.6295 40.3989 9.48535 40.4004L0.75 40.3945L0.751953 0.407227L9.21094 0.400391ZM21.5244 6.83496C16.6613 3.86011 10.4273 4.54391 4.91113 4.55664L17.2607 22.3262C19.5017 25.5466 21.7744 28.9254 24.0615 32.0889C24.847 31.468 25.7087 30.3488 26.2646 29.5088C28.7144 25.5207 29.444 20.7119 28.2871 16.1777C27.305 12.2252 25.0035 8.9637 21.5244 6.83496Z"
-                                        fill="#1DB9B9" />
-                                </svg>
+                                <img src="/assets/images/logo/logo-mark.svg" alt="Hamid" width="34" height="34">
                             </div>
                             <span class="line-vertical left"></span>
                             <span class="line-vertical right"></span>
@@ -73,12 +69,12 @@
                             {/if}
                             <div class="tf-grid-layout sm-col-2">
                                 <fieldset class="tf-field">
-                                    <input class="tf-input" type="text" name="name" value={form?.values?.name ?? ''} placeholder=" " required>
-                                    <label class="tf-lable">Name <span class="text-primary">*</span></label>
+                                    <input class="tf-input" type="text" id="contact-name" name="name" value={form?.values?.name ?? ''} placeholder=" " required>
+                                    <label class="tf-lable" for="contact-name">Name <span class="text-primary">*</span></label>
                                 </fieldset>
                                 <fieldset class="tf-field">
-                                    <input class="tf-input" type="email" name="email" value={form?.values?.email ?? ''} placeholder=" " required>
-                                    <label class="tf-lable">Email <span class="text-primary">*</span></label>
+                                    <input class="tf-input" type="email" id="contact-email" name="email" value={form?.values?.email ?? ''} placeholder=" " required>
+                                    <label class="tf-lable" for="contact-email">Email <span class="text-primary">*</span></label>
                                 </fieldset>
                             </div>
                             <div class="tf-grid-layout sm-col-2">
@@ -102,8 +98,8 @@
                                 </fieldset>
                             </div>
                             <fieldset class="tf-field">
-                                <textarea class="tf-input" name="message" rows="3" placeholder=" " required>{form?.values?.message ?? ''}</textarea>
-                                <label class="tf-lable">What's on your mind?</label>
+                                <textarea class="tf-input" id="contact-message" name="message" rows="3" placeholder=" " required>{form?.values?.message ?? ''}</textarea>
+                                <label class="tf-lable" for="contact-message">What's on your mind?</label>
                             </fieldset>
                         </div>
                         <div class="form-action">

@@ -3,10 +3,27 @@ services:
     build: .
     image: hamid-portfolio:latest
     restart: unless-stopped
-    ports:
-      - '3000:3000'
+    expose:
+      - '3000'
     environment:
       NODE_ENV: production
       PORT: 3000
       HOST: 0.0.0.0
       RESEND_API_KEY: ${RESEND_API_KEY}
+
+  caddy:
+    image: caddy:2-alpine
+    restart: unless-stopped
+    depends_on:
+      - portfolio
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:

@@ -18,33 +18,33 @@
 	</div>
 	<div class="bg-image-list">
 		<div class="bg-image">
-			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-1.jpg" alt="Image">
+			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-1.jpg" alt="">
 			<div class="img-item">
-				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="Image">
+				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="">
 			</div>
 		</div>
 		<div class="bg-image">
-			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-2.jpg" alt="Image">
+			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-2.jpg" alt="">
 			<div class="img-item">
-				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="Image">
+				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="">
 			</div>
 		</div>
 		<div class="bg-image">
-			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-3.jpg" alt="Image">
+			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-3.jpg" alt="">
 			<div class="img-item">
-				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="Image">
+				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="">
 			</div>
 		</div>
 		<div class="bg-image">
-			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-1.jpg" alt="Image">
+			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-1.jpg" alt="">
 			<div class="img-item">
-				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="Image">
+				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="">
 			</div>
 		</div>
 		<div class="bg-image">
-			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-2.jpg" alt="Image">
+			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-2.jpg" alt="">
 			<div class="img-item">
-				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="Image">
+				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="">
 			</div>
 		</div>
 	</div>

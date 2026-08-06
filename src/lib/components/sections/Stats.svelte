@@ -1,5 +1,5 @@
 <!-- Stats -->
-<section class="section-testimonial flat-spacing">
+<section class="section-testimonial flat-spacing" id="statsScroll">
     <div class="indicator-wrap flat-spacing">
         <div class="container">
             <div class="row">
@@ -49,7 +49,7 @@
         </div>
     </div>
     <div class="bg-img-item">
-        <img loading="lazy" width="1440" height="800" src="/assets/images/item/grid.png" alt="Image">
+        <img loading="lazy" width="1440" height="800" src="/assets/images/item/grid.png" alt="">
     </div>
 </section>
 <!-- /Stats -->

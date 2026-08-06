@@ -432,7 +432,7 @@
 							{/each}
 						</div>
 						<div class="project-gallery-controls">
-							<button class="nav-btn prev-btn" onclick={() => navigateGallery('prev')}>
+							<button class="nav-btn prev-btn" aria-label="Previous image" onclick={() => navigateGallery('prev')}>
 								<i class="icon icon-arrow-caret-left"></i>
 							</button>
 							<div class="project-gallery-dots">
@@ -446,7 +446,7 @@
 									></span>
 								{/each}
 							</div>
-							<button class="nav-btn next-btn" onclick={() => navigateGallery('next')}>
+							<button class="nav-btn next-btn" aria-label="Next image" onclick={() => navigateGallery('next')}>
 								<i class="icon icon-arrow-caret-right"></i>
 							</button>
 						</div>

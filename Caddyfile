@@ -1,0 +1,3 @@
+hamidrezayourdkhani.com, www.hamidrezayourdkhani.com {
+	reverse_proxy portfolio:3000
+}

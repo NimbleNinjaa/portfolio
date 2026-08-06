@@ -1,7 +1,7 @@
 <!-- Select Work -->
 <div class="section-selected-work flat-spacing pb-0" id="workScroll">
 	<div class="bg-img effectFade fadeUp">
-		<img loading="lazy" width="1440" height="720" src="/assets/images/item/mountain.png" alt="Image">
+		<img loading="lazy" width="1440" height="720" src="/assets/images/item/mountain.png" alt="">
 	</div>
 	<div class="content-wrap-1 wrap-list-btn">
 		<div class="container">
@@ -33,7 +33,7 @@
 								</div>
 							</div>
 							<div class="image-award">
-								<img loading="lazy" width="80" height="80" src="/assets/images/item/award.svg" alt="Image">
+								<img loading="lazy" width="80" height="80" src="/assets/images/item/award.svg" alt="">
 							</div>
 						</div>
 					</div>
@@ -43,32 +43,32 @@
 						<div class="slick-for">
 							<div>
 								<div class="image effectFade fadeZoom">
-									<img src="/assets/images/section/work-1.png" alt="Image">
+									<img src="/assets/images/section/work-1.png" alt="BFLOO project screenshot">
 								</div>
 							</div>
 							<div>
 								<div class="image">
-									<img src="/assets/images/section/work-2.png" alt="Image">
+									<img src="/assets/images/section/work-2.png" alt="YORU AI project screenshot">
 								</div>
 							</div>
 							<div>
 								<div class="image">
-									<img src="/assets/images/section/work-3.png" alt="Image">
+									<img src="/assets/images/section/work-3.png" alt="HEIZE AI project screenshot">
 								</div>
 							</div>
 							<div>
 								<div class="image">
-									<img src="/assets/images/section/woek-4.png" alt="Image">
+									<img src="/assets/images/section/woek-4.png" alt="HELTH project screenshot">
 								</div>
 							</div>
 							<div>
 								<div class="image">
-									<img src="/assets/images/section/work-5.png" alt="Image">
+									<img src="/assets/images/section/work-5.png" alt="LUXPAY project screenshot">
 								</div>
 							</div>
 							<div>
 								<div class="image">
-									<img src="/assets/images/section/work-6.png" alt="Image">
+									<img src="/assets/images/section/work-6.png" alt="WONDASTREET project screenshot">
 								</div>
 							</div>
 						</div>

@@ -21,8 +21,8 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-auto">
-					<a href="/" class="logo-site">
-						<i class="icon icon-davies-logo"></i>
+					<a href="/" class="logo-site" aria-label="Home">
+						<img src="/assets/images/logo/logo-mark.svg" alt="Hamid" width="34" height="34">
 					</a>
 				</div>
 				<div class="col d-none d-md-flex justify-content-center">

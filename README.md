@@ -43,11 +43,10 @@ npm run check        # type-check with svelte-check
 ```
 src/
 ├── lib/
-│   ├── components/
-│   │   ├── layout/     # Header, Footer
-│   │   ├── ui/         # Preloader, ScrollToTop
-│   │   └── sections/   # Hero, Projects, About, Contact, etc.
-│   └── stores/
+│   └── components/
+│       ├── layout/     # Header, Footer
+│       ├── ui/         # Preloader, ScrollToTop
+│       └── sections/   # Hero, Projects, About, Contact, etc.
 ├── routes/
 │   ├── +layout.svelte
 │   ├── +page.svelte
@@ -65,11 +64,16 @@ docker build -t hamid-portfolio .
 docker run -p 3000:3000 -e RESEND_API_KEY=your_key hamid-portfolio
 ```
 
-Or with Docker Compose (reads `RESEND_API_KEY` from your shell/`.env`):
+Or with Docker Compose (reads `RESEND_API_KEY` from your shell/`.env`). This
+also starts a Caddy reverse proxy that auto-issues HTTPS for the domain
+configured in `Caddyfile`:
 
 ```bash
 docker compose up -d --build
 ```
+
+For the full production runbook (Oracle Cloud firewall rules, Cloudflare
+DNS, getting the code onto the server), see [DEPLOY.md](DEPLOY.md).
 
 ### CI/CD
 

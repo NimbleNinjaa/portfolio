@@ -1,5 +1,5 @@
 <!-- Brand Section -->
-<div class="section-brand flat-spacing">
+<div class="section-brand flat-spacing" id="techStackScroll">
 	<div class="container">
 		<h6 class="mini-title text-caption text-white-64 text-center">
 			TECH STACK
