@@ -1,52 +1,84 @@
 <script lang="ts">
+	import { fly, fade } from 'svelte/transition';
+	import { cubicOut } from 'svelte/easing';
+
 	interface Props {
 		onOpenModal: (projectId: string) => void;
 	}
-	
+
 	let { onOpenModal }: Props = $props();
+
+	interface Project {
+		id: string;
+		image: string;
+		imageAlt: string;
+		title: string;
+		desc: string;
+		tags: string[];
+	}
+
+	const projects: Project[] = [
+		{
+			id: 'technology',
+			image: '/assets/images/section/technologymain.png',
+			imageAlt: 'Technology and Software project showcase',
+			title: 'Technology & Software',
+			desc: 'Innovative software solutions and cutting-edge technology projects that transform businesses and enhance user experiences through modern development practices.',
+			tags: ['Web Applications', 'Mobile Development', 'Database Solutions', 'API Integration', 'SaaS Platforms']
+		},
+		{
+			id: 'finance',
+			image: '/assets/images/section/financial-main.png',
+			imageAlt: 'Finance and Fintech project showcase',
+			title: 'Finance & Fintech',
+			desc: 'Financial technology solutions that revolutionize banking, payments, and investment platforms with secure, scalable, and user-friendly interfaces.',
+			tags: ['Payment Systems', 'Banking Platforms', 'Investment Apps', 'Blockchain Solutions', 'Financial Analytics']
+		},
+		{
+			id: 'edgevision',
+			image: '/assets/images/section/Business-main-big.png',
+			imageAlt: 'Edge Vision AI Posture Detection project showcase',
+			title: 'Edge Vision – AI Posture Detection',
+			desc: 'AI-powered desktop application developed during the Demola innovation program to help office workers and gamers improve their posture using computer vision and machine learning.',
+			tags: ['Computer Vision', 'Machine Learning', 'Real-Time Detection', 'Desktop Application', 'Python & OpenCV']
+		},
+		{
+			id: 'health',
+			image: '/assets/images/section/healthcaremain1.png',
+			imageAlt: 'Health & Wellness mobile app showcase',
+			title: 'Health & Wellness',
+			desc: 'Cross-platform healthcare mobile application built with Flutter, connecting patients and doctors through profile management, appointment booking, and real-time online consultations.',
+			tags: ['Flutter Mobile App', 'Patient & Doctor Management', 'Online Consultation System', 'Real-Time Communication', 'Android & iOS']
+		},
+		{
+			id: 'dexer',
+			image: '/assets/images/section/maindexerbig.png',
+			imageAlt: 'Dexer Decentralized Exchange mobile app showcase',
+			title: 'Dexer (Decentralized Cryptocurrency Token Swap Platform)',
+			desc: "Dexer is a Web3 decentralized exchange (DEX) application that enables users to securely swap cryptocurrency tokens directly through blockchain smart contracts without relying on a centralized intermediary. The platform combines a user-friendly Svelte frontend with Ethereum smart contracts developed using Foundry, providing a fast, transparent, and secure token trading experience.",
+			tags: ['Smart Contract Development', 'Token Swap Mechanics', 'Wallet Integration', 'Foundry Testing & Deployment', 'Svelte Web3 Frontend']
+		}
+	];
+
+	let currentIndex = $state(0);
+	const current = $derived(projects[currentIndex]);
+
+	function next() {
+		currentIndex = (currentIndex + 1) % projects.length;
+	}
+	function prev() {
+		currentIndex = (currentIndex - 1 + projects.length) % projects.length;
+	}
 </script>
 
 <!-- Projects -->
-<section class="section-service-2 section-projects-custom overflow-hidden flat-spacing" id="projectsScroll">
-	<!-- Animated Floating Lights -->
+<section class="section-projects-custom overflow-hidden flat-spacing" id="projectsScroll">
 	<div class="floating-lights">
 		<div class="floating-light"></div>
 		<div class="floating-light"></div>
 		<div class="floating-light"></div>
 		<div class="floating-light"></div>
 		<div class="floating-light"></div>
-	</div>
-	<div class="bg-image-list">
-		<div class="bg-image">
-			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-1.jpg" alt="">
-			<div class="img-item">
-				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="">
-			</div>
-		</div>
-		<div class="bg-image">
-			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-2.jpg" alt="">
-			<div class="img-item">
-				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="">
-			</div>
-		</div>
-		<div class="bg-image">
-			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-3.jpg" alt="">
-			<div class="img-item">
-				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="">
-			</div>
-		</div>
-		<div class="bg-image">
-			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-1.jpg" alt="">
-			<div class="img-item">
-				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="">
-			</div>
-		</div>
-		<div class="bg-image">
-			<img loading="lazy" width="1440" height="938" src="/assets/images/section/bg-service-2.jpg" alt="">
-			<div class="img-item">
-				<img loading="lazy" width="1440" height="938" src="/assets/images/item/overlay.png" alt="">
-			</div>
-		</div>
 	</div>
 
 	<div class="container">
@@ -58,229 +90,150 @@
 	</div>
 	<div class="container">
 		<div class="wrap-control position-relative">
-			<!-- Project 1: Technology & Software -->
-			<div class="wg-service-2">
-				<div class="main-image">
-					<div class="image">
-						<img loading="lazy" width="424" height="530" src="/assets/images/section/technologymain.png" alt="Technology and Software project showcase">
+			{#key currentIndex}
+				<div class="wg-service-2">
+					<div class="main-image" in:fly={{ x: 500, duration: 750, easing: cubicOut }}>
+						<div class="image">
+							<img loading="lazy" width="424" height="530" src={current.image} alt={current.imageAlt}>
+						</div>
 					</div>
-					<div class="action tf-btn-2 cs-pointer">
-						<i class="icon icon-arrow-long-right"></i>
-					</div>
-				</div>
-				<div class="center">
-					<h5 class="title">
-						Technology & Software
-					</h5>
-					<p class="desc">
-						Innovative software solutions and cutting-edge technology projects that transform businesses and enhance user experiences through modern development practices.
-					</p>
-					<div class="br-line d-flex"></div>
-					<ul class="tf-list vertical">
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Web Applications
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Mobile Development
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Database Solutions
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> API Integration
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> SaaS Platforms
-						</li>
-					</ul>
-					<button onclick={() => onOpenModal('technology')} class="tf-btn">
-						SEE MORE
-					</button>
-				</div>
-				<div class="image-simu">
-				</div>
-				<div class="image-2">
-					<img loading="lazy" width="212" height="265" src="/assets/images/section/bank-small.jpg " alt="Finance and Fintech project showcase smaller">
-				</div>
-			</div>
-			<!-- Project 2: Finance & Fintech -->
-			<div class="wg-service-2">
-				<div class="main-image">
-					<div class="image">
-						<img loading="lazy" width="424" height="530" src="/assets/images/section/financial-main.png" alt="Finance and Fintech project showcase">
-					</div>
-					<div class="action tf-btn-2 cs-pointer">
-						<i class="icon icon-arrow-long-right"></i>
+					<div class="center" in:fade={{ duration: 500, delay: 200 }}>
+						<h5 class="title project-title-clamp">
+							{current.title}
+						</h5>
+						<p class="desc project-desc-clamp">
+							{current.desc}
+						</p>
+						<div class="br-line d-flex"></div>
+						<ul class="tf-list vertical">
+							{#each current.tags as tag}
+								<li class="letter-space--1">
+									<span class="text-primary">//</span> {tag}
+								</li>
+							{/each}
+						</ul>
+						<button onclick={() => onOpenModal(current.id)} class="tf-btn">
+							SEE MORE
+						</button>
 					</div>
 				</div>
-				<div class="center">
-					<h5 class="title">
-						Finance & Fintech
-					</h5>
-					<p class="desc">
-						Financial technology solutions that revolutionize banking, payments, and investment platforms with secure, scalable, and user-friendly interfaces.
-					</p>
-					<div class="br-line d-flex"></div>
-					<ul class="tf-list vertical">
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Payment Systems
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Banking Platforms
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Investment Apps
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Blockchain Solutions
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Financial Analytics
-						</li>
-					</ul>
-					<button onclick={() => onOpenModal('finance')} class="tf-btn">
-						SEE MORE
-					</button>
-				</div>
-				<div class="image-simu">
-				</div>
-				<div class="image-2">
-					<img loading="lazy" width="212" height="265" src="/assets/images/section/Business-main.png" alt="Business-main project showcase smaller">
-				</div>
-			</div>
-			<!-- Project 3: Edge Vision - AI Posture Detection -->
-			<div class="wg-service-2">
-				<div class="main-image">
-					<div class="image">
-						<img loading="lazy" width="424" height="530" src="/assets/images/section/Business-main-big.png" alt="Edge Vision AI Posture Detection project showcase">
+			{/key}
+
+			<div class="project-nav">
+				<button type="button" class="project-nav-btn tf-btn-2" onclick={prev} aria-label="Previous project">
+					<i class="icon icon-arrow-long-left"></i>
+				</button>
+				<div class="project-nav-center">
+					<div class="project-nav-dots">
+						{#each projects as project, i}
+							<button
+								type="button"
+								class="project-nav-dot"
+								class:active={i === currentIndex}
+								onclick={() => (currentIndex = i)}
+								aria-label="Go to {project.title}"
+								aria-current={i === currentIndex}
+							></button>
+						{/each}
 					</div>
-					<div class="action tf-btn-2 cs-pointer">
-						<i class="icon icon-arrow-long-right"></i>
-					</div>
+					<span class="project-nav-count text-caption fw-medium">
+						{String(currentIndex + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}
+					</span>
 				</div>
-				<div class="center">
-					<h5 class="title">
-						Edge Vision – AI Posture Detection
-					</h5>
-					<p class="desc">
-						AI-powered desktop application developed during the Demola innovation program to help office workers and gamers improve their posture using computer vision and machine learning.
-					</p>
-					<div class="br-line d-flex"></div>
-					<ul class="tf-list vertical">
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Computer Vision
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Machine Learning
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Real-Time Detection
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Desktop Application
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Python & OpenCV
-						</li>
-					</ul>
-					<button onclick={() => onOpenModal('edgevision')} class="tf-btn">
-						SEE MORE
-					</button>
-				</div>
-				<div class="image-simu">
-				</div>
-				<div class="image-2">
-					<img loading="lazy" width="212" height="265" src="/assets/images/section/mainhealth.png" alt="Health & Wellness mobile app showcase">
-				</div>
-			</div>
-			<!-- Project 4: Health & Wellness -->
-			<div class="wg-service-2">
-				<div class="main-image">
-					<div class="image">
-						<img loading="lazy" width="424" height="530" src="/assets/images/section/healthcaremain1.png" alt="Health & Wellness mobile app showcase">
-					</div>
-					<div class="action tf-btn-2 cs-pointer">
-						<i class="icon icon-arrow-long-right"></i>
-					</div>
-				</div>
-				<div class="center">
-					<h5 class="title">
-						Health & Wellness
-					</h5>
-					<p class="desc">
-						Cross-platform healthcare mobile application built with Flutter, connecting patients and doctors through profile management, appointment booking, and real-time online consultations.
-					</p>
-					<div class="br-line d-flex"></div>
-					<ul class="tf-list vertical">
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Flutter Mobile App
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Patient & Doctor Management
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Online Consultation System
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Real-Time Communication
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Android & iOS
-						</li>
-					</ul>
-					<button onclick={() => onOpenModal('health')} class="tf-btn">
-						SEE MORE
-					</button>
-				</div>
-				<div class="image-simu">
-				</div>
-				<div class="image-2">
-					<img loading="lazy" width="212" height="265" src="/assets/images/section/dexerphone.png" alt="Dexer Decentralized Exchange mobile app showcase">
-				</div>
-			</div>
-			<!-- Project 5: Dexer - Decentralized Exchange -->
-			<div class="wg-service-2">
-				<div class="main-image">
-					<div class="image">
-						<img loading="lazy" width="424" height="530" src="/assets/images/section/maindexerbig.png" alt="Dexer Decentralized Exchange mobile app showcase">
-					</div>
-					<div class="action tf-btn-2 cs-pointer">
-						<i class="icon icon-arrow-long-left"></i>
-					</div>
-				</div>
-				<div class="center">
-					<h5 class="title">
-						Dexer(Decentralized Cryptocurrency Token Swap Platform)
-					</h5>
-					<p class="desc">
-						Dexer is a Web3 decentralized exchange (DEX) application that enables users to securely swap cryptocurrency tokens directly through blockchain smart contracts without relying on a centralized intermediary. The platform combines a user-friendly Svelte frontend with Ethereum smart contracts developed using Foundry, providing a fast, transparent, and secure token trading experience.
-					</p>
-					<div class="br-line d-flex"></div>
-					<ul class="tf-list vertical">
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Smart Contract Development
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Token Swap Mechanics
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Wallet Integration
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Foundry Testing & Deployment
-						</li>
-						<li class="letter-space--1">
-							<span class="text-primary">//</span> Svelte Web3 Frontend
-						</li>
-					</ul>
-					<button onclick={() => onOpenModal('dexer')} class="tf-btn">
-						SEE MORE
-					</button>
-				</div>
-				<div class="image-simu">
-				</div>
+				<button type="button" class="project-nav-btn tf-btn-2" onclick={next} aria-label="Next project">
+					<i class="icon icon-arrow-long-right"></i>
+				</button>
 			</div>
 		</div>
 	</div>
 </section>
 <!-- /Projects -->
+
+<style>
+	.section-projects-custom {
+		position: relative;
+	}
+	.project-nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 24px;
+		margin-top: 60px;
+	}
+	.project-nav-btn {
+		width: 56px;
+		height: 56px;
+		font-size: 20px;
+		cursor: pointer;
+		border: none;
+		color: var(--white);
+	}
+	.project-nav-center {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 12px;
+	}
+	.project-nav-dots {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	.project-nav-dot {
+		width: 8px;
+		height: 8px;
+		border-radius: 50%;
+		border: none;
+		padding: 0;
+		background-color: var(--white-16);
+		cursor: pointer;
+		transition: all 0.3s ease;
+	}
+	.project-nav-dot:hover {
+		background-color: var(--white-64);
+	}
+	.project-nav-dot.active {
+		background-color: var(--primary);
+		width: 24px;
+		border-radius: 4px;
+	}
+	:global(.section-projects-custom .main-image .image) {
+		height: 530px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: transparent;
+		overflow: hidden;
+	}
+	:global(.section-projects-custom .main-image .image img) {
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+	@media (max-width: 1199px) {
+		:global(.section-projects-custom .main-image .image) {
+			height: 100%;
+		}
+	}
+	.project-title-clamp {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		line-clamp: 2;
+		overflow: hidden;
+		min-height: 80px;
+	}
+	.project-desc-clamp {
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 4;
+		line-clamp: 4;
+		overflow: hidden;
+		min-height: calc(4 * 1.5em);
+	}
+	.project-nav-count {
+		min-width: 72px;
+		text-align: center;
+		color: var(--white-64);
+	}
+</style>

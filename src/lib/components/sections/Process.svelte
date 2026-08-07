@@ -1,5 +1,11 @@
 <!-- Process -->
-<section class="section-process flat-spacing" id="processScroll">
+<section class="section-process flat-spacing process-glow-section" id="processScroll">
+	<div class="neon-lines" aria-hidden="true">
+		<span class="neon-line neon-line-1"></span>
+		<span class="neon-line neon-line-2"></span>
+		<span class="neon-line neon-line-3"></span>
+		<span class="neon-line neon-line-4"></span>
+	</div>
 	<div class="container">
 		<div class="s-header">
 			<h2 class="title text-display-2 letter-space--3 fw-semibold effectFade fadeUp">
@@ -102,4 +108,71 @@
 		</div>
 	</div>
 </section>
+
+<style>
+	.process-glow-section {
+		position: relative;
+		overflow: hidden;
+	}
+	.process-glow-section > .container {
+		position: relative;
+		z-index: 1;
+	}
+	.neon-lines {
+		position: absolute;
+		inset: 0;
+		overflow: hidden;
+		pointer-events: none;
+		z-index: 0;
+	}
+	.neon-line {
+		position: absolute;
+		left: -10%;
+		width: 120%;
+		height: 2px;
+		background: linear-gradient(90deg, transparent 0%, var(--primary) 50%, transparent 100%);
+		box-shadow:
+			0 0 8px 1px var(--primary),
+			0 0 24px 4px rgba(29, 185, 185, 0.6),
+			0 0 60px 10px rgba(29, 185, 185, 0.25);
+		opacity: 0.55;
+		animation: neonPulse 6s ease-in-out infinite;
+	}
+	.neon-line-1 {
+		top: 10%;
+		transform: rotate(-6deg);
+		animation-delay: 0s;
+	}
+	.neon-line-2 {
+		top: 38%;
+		transform: rotate(4deg);
+		animation-delay: -1.5s;
+	}
+	.neon-line-3 {
+		top: 66%;
+		transform: rotate(-3deg);
+		animation-delay: -3s;
+	}
+	.neon-line-4 {
+		top: 90%;
+		transform: rotate(7deg);
+		animation-delay: -4.5s;
+	}
+	@keyframes neonPulse {
+		0%, 100% {
+			opacity: 0.3;
+			filter: brightness(0.85);
+		}
+		50% {
+			opacity: 0.85;
+			filter: brightness(1.3);
+		}
+	}
+	@media (prefers-reduced-motion: reduce) {
+		.neon-line {
+			animation: none;
+			opacity: 0.5;
+		}
+	}
+</style>
 <!-- /Process -->
