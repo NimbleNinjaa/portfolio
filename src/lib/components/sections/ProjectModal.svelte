@@ -30,7 +30,6 @@
 	// Reset index when project changes
 	$effect(() => {
 		if (projectId) {
-			console.log('ProjectModal - projectId changed:', projectId);
 			currentIndex = 0;
 			isPlaying = true;
 		}
@@ -70,11 +69,6 @@
 		const secs = Math.floor(seconds % 60);
 		return `${mins}:${secs.toString().padStart(2, '0')}`;
 	}
-
-	// Log when modal opens/closes
-	$effect(() => {
-		console.log('ProjectModal - isOpen changed:', isOpen);
-	});
 
 	const projectsData: Record<string, ProjectData> = {
 		technology: {

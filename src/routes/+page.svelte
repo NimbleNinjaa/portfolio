@@ -17,10 +17,8 @@
 	let currentProjectId = $state('');
 	
 	function handleOpenModal(projectId: string) {
-		console.log('Opening modal for:', projectId);
 		currentProjectId = projectId;
 		modalOpen = true;
-		console.log('Modal state:', { modalOpen, currentProjectId });
 	}
 </script>
 

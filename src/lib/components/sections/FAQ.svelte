@@ -32,7 +32,7 @@
 		}
 	];
 
-	let openIndex = $state(1);
+	let openIndex = $state(-1);
 
 	function toggle(index: number) {
 		openIndex = openIndex === index ? -1 : index;

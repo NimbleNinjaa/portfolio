@@ -745,8 +745,8 @@ h6,
   letter-spacing: -0.01em;
 }
 .text-caption-large {
-  font-size: 32px;
-  line-height: 40px;
+  font-size: clamp(20px, 4vw, 32px);
+  line-height: clamp(26px, 5vw, 40px);
   letter-spacing: -0.01em;
 }
 .text-caption-normal {
@@ -4440,8 +4440,8 @@ button.animate-btn::after,
   align-items: end;
 }
 .section-hero-v1 .davies-large {
-  font-size: clamp(80px, 16vw, 200px);
-  line-height: clamp(96px, 14vw, 176px);
+  font-size: clamp(48px, 16vw, 200px);
+  line-height: clamp(54px, 14vw, 176px);
   font-weight: 550;
   letter-spacing: -0.06em;
 }

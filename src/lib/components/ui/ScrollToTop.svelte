@@ -20,7 +20,7 @@
 	});
 </script>
 
-<button id="goTop" onclick={scrollToTop}>
+<button id="goTop" onclick={scrollToTop} aria-label="Scroll to top">
 	<span class="border-progress" style="--progress: {scrollProgress}%"></span>
 	<span class="ic-wrap">
 		<span class="icon icon-arrow-caret-right"></span>

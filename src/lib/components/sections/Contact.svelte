@@ -16,27 +16,10 @@
     </div>
     <div class="s-header d-block">
         <div class="container">
-            <div class="row">
-                <div class="col-2 offset-lg-2 col-lg-2">
-                    <div class="col-left">
-                        <a href="/" class="logo-custom" aria-label="Home">
-                            <div class="logo-site-sv">
-                                <img src="/assets/images/logo/logo-mark.svg" alt="Hamid" width="34" height="34">
-                            </div>
-                            <span class="line-vertical left"></span>
-                            <span class="line-vertical right"></span>
-                            <span class="line-horizontal top"></span>
-                            <span class="line-horizontal bottom"></span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-10 col-lg-6">
-                    <h2 class="text-display-2 letter-space--3 text-end effectFade fadeUp">
-                        Got an idea? <br>
-                        Let's break things (in a good way)
-                    </h2>
-                </div>
-            </div>
+            <h2 class="text-display-2 letter-space--3 text-center effectFade fadeUp">
+                Got an idea? <br>
+                Let's break things (in a good way)
+            </h2>
         </div>
     </div>
     <div class="container">
